@@ -1,4 +1,4 @@
-# 📘 Module 06 - JavaScript: Loops, Iteration, and High-Order Array Methods
+# 📕 Module 06 - Loops, Iteration and High Order Array Methods - Lesson 01: Introduction
 
 ## 📚 Lesson Overview
 This lesson explores the foundational and high-level iteration mechanisms in JavaScript, including classic loops (`for`, `while`, `do...while`) and modern high-order array methods such as `.map()`, `.filter()`, and `.reduce()`.

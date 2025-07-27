@@ -1,4 +1,4 @@
-//TODO 📕 Module 06 - Loops, Iteration and High Order Array Methods - Lesson 01.01: Introduction
+//TODO 📕 Module 06 - Loops, Iteration and High Order Array Methods - Lesson 01: Introduction
 
 
 //TODO 📝 Step 1: Theoretical Aspects
@@ -563,7 +563,6 @@ const optimized = data.reduce((acc, val) => {
 
 //TODO  🧩 Step 5: Exercises – Progressive Skill Building
 
-
 //* 🟢 1. Starter Exercises
 
 //  Reinforce the basics of iteration and array method usage.
@@ -716,7 +715,7 @@ function getActiveUsers() {
         { user: "Lily", age: 55, isActive: true },
         { user: "Jack", age: 31, isActive: false },
     ];
-    const activeUsers = users.filter(user => user.isActive && user.age> 25);
+    const activeUsers = users.filter(user => user.isActive && user.age > 25);
     return activeUsers;
 }
 console.log(getActiveUsers());
