@@ -282,29 +282,3 @@ for (let m = 1; m <= 100; m++) {
 //? 3. Do you feel confident building your own conditional loops from scratch now? Why or why not?
 //! ☑️ Answer: Yes, I feel more confident building my own conditional loops in JavaScript from scratch now than I was at the start of the lesson. Working through the FizzBuzz challenge step by step really helped me understand how loops and conditionals work together to control the flow of a program.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

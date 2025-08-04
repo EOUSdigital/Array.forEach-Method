@@ -11,6 +11,7 @@
 
 //* ✅ Basic Syntax
 
+const iterable = "";
 for (const item of iterable) {
     //  do something with item
 }
@@ -167,11 +168,9 @@ for (const letter of word) {
 
 //? 4. What would this log?
 
-```js
 for (const letter of "cat") {
     console.log(letter);
 }
-```
 
 //  A. "cat"
 //  B. "c", "a", "t"
@@ -224,7 +223,7 @@ for (const letter of "cat") {
 //  ✅ Excellent — you nailed one of the most common beginner mistakes with for...of.
 //  Many developers assume:
 
-for (const thing of array)
+//  for (const thing of array)
 
 //  …means thing is the index, but it's actually the value.
 //  This confusion often leads to:
@@ -262,106 +261,185 @@ for (const thing of array)
 //  This kind of explanation would help anyone new to loops truly understand what for...of is meant to do.
 
 
-//TODO  📝 Step 5: Exercises `for...of` loop.
+//TODO  📝 Step 5: Exercises `for...of` loop
 
 //* 🧠 Exercise 1: Looping Over an Array of Strings
 
 //  Task:
 //  You have this array of names:
 
-const names = ["Olivia", "Liam", "Emma", "Noah", "Ava"];
-
+//  const names = ["Olivia", "Liam", "Emma", "Noah", "Ava"];
 
 //  ✅ Loop through each name and print:
 //  `"Hello, [name]!"`
 
 //? ☑️ Pseudocode 1
 
+//  SET names TO array of names
 
+//  FOR const name of names
+//      PRINT Hello, ${name}!
 
 //! 🧮 Solution 1
 
+const names = ["Olivia", "Liam", "Emma", "Noah", "Ava"];
 
-
-
+for (const name of names) {
+    console.log(`Hello, ${name}!`);
+} 
 
 //* 🧠 Exercise 2: Count Letters
 
 //  Task:
 //  Given the word:
 
-```js
-const word = "banana";
-```
+//! const word = "banana";
 
 //  ✅ Count how many times the letter `"a"` appears.
 //  Use a counter, `for...of`, and `if`.
 
 //?  ☑️ Pseudocode 2
 
+//  SET word2
+//  SET count
 
+//  FOR const letter of word2
+//      IF letter === "a"
+//          INCREMENT count
+
+//  PRINT count
 
 //! 🧮 Solution 2
 
+const word2 = "banana";
+let count = 0;
 
-
+for (const letter of word2) {
+    if (letter === "a") {
+        count++;
+    }
+}
+console.log(count);
 
 //* 🧠 Exercise 3: Filter by Length
 
 //  Task:
 //  Given:
 
-```js
-const colors = ["red", "blue", "pink", "lime", "cyan", "gold"];
-```
+//  const colors = ["red", "blue", "pink", "lime", "cyan", "gold"];
 
-//  ✅ Use `for...of` and `continue` to skip any color **shorter than 4 characters**, and print the rest.
+
+//  ✅ Use `for...of` and `continue` to skip any color `shorter than 4 characters`, and print the rest.
 
 //?  ☑️ Pseudocode 3
 
-
+//  FOR const color of colors
+//      IF color.length < 4
+//          PRINT color
+//          CONTINUE
 
 //! 🧮 Solution 3
 
+const colors = ["red", "blue", "pink", "lime", "cyan", "gold"];
 
+for (const color of colors) {
+    if (color.length < 4) {
+        continue;
+    }
+    console.log(color);
+}
 
 //* 🧠 Exercise 4: Loop Over Nested Array
 
 //  Task:
 //  You are given:
 
-```js
 const animalGroups = [["cat", "dog"], ["lion", "tiger"], ["fox", "wolf"]];
-```
 
-//  ✅ Use a nested `for...of` loop to print **each individual animal**.
+//  ✅ Use a nested `for...of` loop to print each individual animal.
 
 //?  ☑️ Pseudocode 4
 
-
+//  FOR const animal of animalGroups
+//      FOR const element of animal
+//          PRINT element
 
 //! 🧮 Solution 4
 
+for (const animal of animalGroups) {
+    for (const element of animal) {
+        console.log(element);
+    }
+}
 
 
+//TODO  🧩 Step 6: Project Integration Option: Word Analyzer
+
+//* 🔍 Project Description:
+//  You’ll build a simple program that analyzes a word and gives information about:
+//  • The total number of characters
+//  • How many times a specific letter appears (like "e")
+//  • Which characters are vowels or consonants
+
+//* 🧠 Logic Breakdown:
+//  1. Prompt the user to enter a word
+//  2. Loop through the word using for...of
+//  3. Inside the loop:
+//      • Use a conditional to check if each letter is a vowel or consonant
+//      • Track how many times a specific letter (like "e") appears
+//      • Count letters
+
+//* 🔄 Bonus:
+//  You can extend this by:
+//  • Ignoring case (e.g., treating "E" as "e")
+//  • Skipping non-letter characters using continue
+//  • Storing letters in arrays like vowels[] or consonants[]
+
+//? ☑️ Pseudocode
+
+//  SET word3
+//  SET count2
+//  SET count3
+
+//  FOR let char of word3.toLowerCase()
+//      IF !/[a-z]/.test(char) CONTINUE
+//      IF "aeiou".includes(char)
+//          INCREMENT count2
+//          PRINT ${char} is a vowel.
+//      ELSE
+//          INCREMENT count3
+//          PRINT ${char} is a consonant.
+
+//  PRINT count3
+
+//! 🧮 Solution
+
+let word3 = prompt("Enter a word:");
+let count2 = 0;
+let count3 = 0;
+
+for (let char of word3.toLowerCase()) {
+    if (!/[a-z]/.test(char)) continue;
+
+    if ("aeiou".includes(char)) {
+        count2++;
+        console.log(`${char} is a vowel.`);
+    } else {
+        count3++;
+        console.log(`${char} is a consonant.`);
+    }
+}
+
+console.log(`Total letters: ${count2} vowels and ${count3} consonants.`);
 
 
+//TODO  🧾 Step 7: Exit Ticket Questions
 
+//? ☑️ 1. What’s one thing about `for...of` loops that finally makes sense to you now?
+//! ✍️ Answer: Now I know that the result of `for...of` loop is a value, not an index, and it is ideal for arrays or strings.  
 
+//? ☑️ 2. What part of `for...of` still feels confusing or deserves more practice?
+//! ✍️ Answer: I am still confused about nested `for...of` loops.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//? ☑️ 3. If someone asked you to explain how `for...of` works, how would you describe it in plain language (without using code)?
+//! ✍️ Answer: If you want to buy some apples, you do not need to know the position of each apple in a box. You simply fill your basket with the number of apples you decide to buy.
